@@ -1,0 +1,61 @@
+ //Q1
+ #include<stdio.h>
+ #include<unistd.h>
+ int main(){
+	 printf("\nHello World");
+	 int f = fork();
+	 int p = getpid();
+	 printf("\n the pid is %d",p);
+	 printf("\n the pid is %d",f);
+	 
+	 return 0;
+ }
+ 
+ 
+ //Q2
+ #include<stdio.h>
+ #include<unistd.h>
+ int main(){
+	 int f = fork();
+	 if(f == 0)
+	 {
+		printf("\n Hey I'm Child\n");
+	 }
+	 
+	 else
+	 {
+		 printf("\n Hey I'm Parent\n");
+	 }
+	 
+	 return 0;
+ }
+ 
+ 
+//Q3
+#include<stdio.h>
+ #include<unistd.h>
+ int main(){
+	 int f = fork();
+	 if(f == 0)
+	 {
+		printf("I'm Child\n");
+		printf("My parent ID %d\n",getppid());
+	 }
+	 
+	 else{
+		 int f1 = fork();
+		 if(f == 0)
+		 {
+			 printf("I 'm sibling\n");
+			 printf("My parent ID %d\n",getppid());
+		 }
+		 
+		 else
+		 {
+			 printf("I'm Parent\n");
+			 printf("My ID %d\n",getppid());
+			 printf("My parent ID %d\n",getppid());
+			 
+		 }
+	 }
+	return 0;
